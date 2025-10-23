@@ -1,0 +1,169 @@
+.games {
+  padding: 5rem 0;
+  background: #e8f5e8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 3rem;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.game-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  max-width: 350px;
+  width: 100%;
+}
+
+.game-card:hover {
+  border-color: #2d5a27;
+}
+
+.game-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.game-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-image img {
+  transform: scale(1.05);
+}
+
+.game-content {
+  padding: 1rem;
+}
+
+.game-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #daa520;
+}
+
+.game-description {
+  color: #daa520;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+.game-link {
+  display: inline-block;
+  background: #8b4513;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: none;
+  font-size: 0.9rem;
+}
+
+.game-link:hover {
+  background: #a0522d;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .games-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .games {
+    padding: 3rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .games-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 100%;
+  }
+  
+  .game-card {
+    max-width: 100%;
+  }
+  
+  .game-image {
+    height: 200px;
+  }
+  
+  .game-content {
+    padding: 0.75rem;
+  }
+  
+  .game-title {
+    font-size: 1.1rem;
+  }
+  
+  .game-description {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-image {
+    height: 180px;
+  }
+  
+  .game-content {
+    padding: 0.5rem;
+  }
+  
+  .game-title {
+    font-size: 1rem;
+  }
+  
+  .game-description {
+    font-size: 0.8rem;
+  }
+}
