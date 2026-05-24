@@ -1,9 +1,9 @@
 export interface Game {
   id: string;
   name: string;
-  image: string;
-  link: string;
+  link?: string;
   description?: string;
+  underConstruction?: boolean;
 }
 
 export interface TeamMember {

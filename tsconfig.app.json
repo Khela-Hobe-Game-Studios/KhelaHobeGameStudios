@@ -22,7 +22,11 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "paths": {
+      "@khelahobe/kui":      ["../kui/packages/lib/dist/index.d.ts"],
+      "@khelahobe/kui/cpdb": ["../kui/packages/lib/dist/cpdb.d.ts"]
+    }
   },
   "include": ["src"]
 }

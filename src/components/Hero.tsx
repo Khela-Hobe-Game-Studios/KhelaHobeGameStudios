@@ -1,30 +1,25 @@
-import React from 'react';
-import './Hero.css';
+import React from 'react'
+import { TitleBlock, Button } from '@khelahobe/kui'
+import './Hero.css'
 
 const Hero: React.FC = () => {
   const scrollToGames = () => {
-    const gamesSection = document.getElementById('games');
-    if (gamesSection) {
-      gamesSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+    document.getElementById('games')?.scrollIntoView({ behavior: 'smooth' })
+  }
 
   return (
     <section className="hero">
-      <div className="hero-content">
-        <h1 className="hero-title">Khela Hobe Game Studios</h1>
-        <p className="hero-tagline">Bringing the joy of Bangladeshi culture into the world of gaming.</p>
-        <div className="hero-cta">
-          <button className="cta-button" onClick={scrollToGames}>Explore Our Games</button>
-        </div>
-      </div>
-      <div className="hero-visual">
-        <div className="hero-graphic">
-          <div className="game-icon">🎮</div>
-        </div>
-      </div>
+      <TitleBlock
+        title="KhelaHobe"
+        subtitle="Game Studios"
+        tagline="Homegrown games with a Bangladeshi soul."
+        watermark="খেলা হবে"
+      />
+      <Button variant="primary" size="lg" onClick={scrollToGames}>
+        See Our Games
+      </Button>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

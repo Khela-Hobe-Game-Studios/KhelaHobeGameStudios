@@ -1,1 +1,12 @@
-/* Reset and base styles are handled in App.css */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+
+.kui-app { min-height: 100vh; }
+
+.mode-toggle {
+  position: fixed;
+  top: var(--kui-space-4);
+  right: var(--kui-space-4);
+  z-index: var(--kui-z-sticky);
+}

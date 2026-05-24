@@ -1,57 +1,61 @@
-import React from 'react';
-import type { Game } from '../types';
-import './Games.css';
+import React from 'react'
+import { Card, Button } from '@khelahobe/kui'
+import type { Game } from '../types'
+import './Games.css'
 
 const Games: React.FC = () => {
   const games: Game[] = [
     {
       id: '1',
       name: 'Chor Police Daktar Babu',
-      image: '/src/assets/cpdb.png',
-      link: 'https://google.com',
-      description: 'The classic game of mafia with a Bangladeshi twist.'
-    }
-  ];
+      link: 'https://chor.khelahobe.store/',
+      description: 'Bluff, deduce, and survive. Everyone\'s a suspect.',
+    },
+    {
+      id: '2',
+      name: 'Ekdaam',
+      link: 'https://ekdaam.khelahobe.store/',
+      description: 'How well do you know the bazaar? Beat the daam — or the daam beats you.',
+    },
+    {
+      id: '3',
+      name: 'Dhaka Yard',
+      description: 'Chase or be chased through the streets of Dhaka.',
+      underConstruction: true,
+    },
+  ]
 
   return (
     <section className="games" id="games">
-      <div className="container">
-        <h2 className="section-title">Our Games</h2>
-        <p className="section-subtitle">Discover the amazing games we've created</p>
-        
-        <div className="games-grid">
+      <div className="games__container">
+        <div className="games__header">
+          <h2 className="games__title">Our Games</h2>
+          <p className="games__subtitle">Discover the amazing games we&apos;ve created</p>
+        </div>
+        <div className="games__grid">
           {games.map((game) => (
-            <div key={game.id} className="game-card">
-              <div className="game-image">
-                <img 
-                  src={game.image} 
-                  alt={game.name}
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjE1MCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2QjcyODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5HYW1lIENhcmQ8L3RleHQ+Cjwvc3ZnPg==';
-                  }}
-                />
-              </div>
-              <div className="game-content">
-                <h3 className="game-title">{game.name}</h3>
-                {game.description && (
-                  <p className="game-description">{game.description}</p>
+            <Card key={game.id}>
+              <Card.Header>{game.name}</Card.Header>
+              {game.description && (
+                <Card.Body>
+                  <p className="game-card__desc">{game.description}</p>
+                </Card.Body>
+              )}
+              <Card.Footer>
+                {game.underConstruction ? (
+                  <Button variant="secondary" size="md" disabled>Under Construction</Button>
+                ) : (
+                  <a href={game.link} target="_blank" rel="noopener noreferrer" className="game-card__link">
+                    <Button variant="primary" size="md">Play Now</Button>
+                  </a>
                 )}
-                <a 
-                  href={game.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="game-link"
-                >
-                  Play Now
-                </a>
-              </div>
-            </div>
+              </Card.Footer>
+            </Card>
           ))}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Games;
+export default Games
